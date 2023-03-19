@@ -54,14 +54,20 @@ const SpeakerSelect = ({
   </Select.Root>
 );
 
+interface SelectItemProps {
+  children: React.ReactNode;
+  className?: string;
+  value: string;
+}
+
 // eslint-disable-next-line react/display-name
-const SelectItem = React.forwardRef(
+const SelectItem = React.forwardRef<HTMLElement, SelectItemProps>(
   ({ children, className, ...props }, forwardedRef) => {
     return (
       <Select.Item
         className={["SelectItem", className].join(" ")}
         {...props}
-        ref={forwardedRef}
+        ref={forwardedRef as React.ForwardedRef<HTMLDivElement>}
       >
         <Select.ItemText>{children}</Select.ItemText>
         <Select.ItemIndicator className="SelectItemIndicator">
