@@ -3,7 +3,6 @@ import Header from "@/components/Header";
 import { RoomProvider } from "@/liveblocks.config";
 import "@/styles/globals.css";
 import "@/styles/SpeakerSelect.css";
-import "@/styles/Toast.css";
 import { LiveList, LiveObject } from "@liveblocks/client";
 import { ClientSideSuspense } from "@liveblocks/react";
 import type { AppProps } from "next/app";
