@@ -1,107 +1,184 @@
-:root {
-  --max-width: 1100px;
-  --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+@import '@radix-ui/colors/blackA.css';
+@import '@radix-ui/colors/red.css';
+@import '@radix-ui/colors/slate.css';
 
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-
-  --primary-glow: conic-gradient(
-    from 180deg at 50% 50%,
-    #16abff33 0deg,
-    #0885ff33 55deg,
-    #54d6ff33 120deg,
-    #0071ff33 160deg,
-    transparent 360deg
-  );
-  --secondary-glow: radial-gradient(
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
-  );
-
-  --tile-start-rgb: 239, 245, 249;
-  --tile-end-rgb: 228, 232, 233;
-  --tile-border: conic-gradient(
-    #00000080,
-    #00000040,
-    #00000030,
-    #00000020,
-    #00000010,
-    #00000010,
-    #00000080
-  );
-
-  --callout-rgb: 238, 240, 241;
-  --callout-border-rgb: 172, 175, 176;
-  --card-rgb: 180, 185, 188;
-  --card-border-rgb: 131, 134, 135;
+/* reset */
+button {
+  all: unset;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-
-    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
-    --secondary-glow: linear-gradient(
-      to bottom right,
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0.3)
-    );
-
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
-      #ffffff80,
-      #ffffff40,
-      #ffffff30,
-      #ffffff20,
-      #ffffff10,
-      #ffffff10,
-      #ffffff80
-    );
-
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
-  }
+body {
+  background-color: #000000;
+  font-family: 'Helvetica', sans-serif;
+  color: #fff;
 }
 
-* {
+.logo {
+  max-width: 500px;
+  height: auto;
+  margin: 2rem auto 2rem -0.5rem;
+}
+
+.footer {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--mauve8);
+}
+
+.footer a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid var(--mauve11);
+  transition: all 0.15s ease;;
+}
+
+.footer a:hover {
+  color: var(--mauve1);
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+h1 {
+  margin-left: 15px;
+}
+
+.who_is_here {
+  display: flex;
+  flex-direction: row;
+  gap: 0.25rem;
+  align-items: center;
+  font-size: 12px;
+  color: var(--mauve8);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3rem;
+  max-width: 28rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+input {
   box-sizing: border-box;
-  padding: 0;
+  width: 100%;
+  border: 0 solid;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  padding: 0 15px;
+  font-size: 13px;
+  line-height: 1;
+  height: 35px;
+  gap: 5px;
+  background-color: white;
+  color: var(--red11);
+  box-shadow: 0 2px 10px var(--blackA7);
+}
+input:focus {
+  outline: none;
+}
+
+.questions-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.question-container {
+  display: flex;
+  padding: 15px;
+  border-radius: 4px;
+  align-items: center;
+  justify-content: space-between;
+  animation: fadeIn 0.25s ease-in;
+  background-color: var(--slate12);
+}
+
+.question {
+  flex-grow: 1;
+}
+
+.speaker {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: var(--mauve8);
+  gap: 0.35rem;
   margin: 0;
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+.question b {
+  color: var(--red11);
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.question-text {
+  margin-bottom: 0;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.delete_button {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  border: 0 solid;
+  appearance: button;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+.delete_button:focus {
+  outline: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.add-button {
+  box-sizing: border-box;
+  width: min-content;
+  border: 2px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  padding: 0 15px;
+  font-size: 13px;
+  line-height: 1;
+  height: 35px;
+  gap: 5px;
+  background-color: var(--red11);
+  color: var(--red2);
+  box-shadow: 0 2px 10px var(--blackA7);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.add-button:hover, .add-button:focus {
+  border: 2px solid var(--red8);
 }
