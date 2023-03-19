@@ -10,6 +10,7 @@ export default function HomePage() {
   const [speaker, setSpeaker] = useState("");
   const [draft, setDraft] = useState("");
   const [from, setFrom] = useState("");
+
   const questions = useStorage((root) => root.questions);
   const status = useStorage((root) => root.status);
 
@@ -92,7 +93,11 @@ export default function HomePage() {
           }}
         />
 
-        {!status?.open ? <p>This Q&A session is currently closed.</p> : <></>}
+        {status && status.open === false ? (
+          <p>This Q&A session is currently closed.</p>
+        ) : (
+          <></>
+        )}
 
         <button
           className="add-button"

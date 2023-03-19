@@ -1,10 +1,6 @@
 import Header from "@/components/Header";
 import QuestionsList from "@/components/QuestionsList";
-import {
-  useBroadcastEvent,
-  useMutation,
-  useStorage,
-} from "@/liveblocks.config";
+import { useMutation, useStorage } from "@/liveblocks.config";
 import { useState } from "react";
 import toast from "react-hot-toast";
 
@@ -12,7 +8,6 @@ export default function ModeratePage() {
   const [filterSpeaker, setFilterSpeaker] = useState<string>();
   const questions = useStorage((root) => root.questions);
   const status = useStorage((root) => root.status);
-  const broadcast = useBroadcastEvent();
 
   const toggleStatus = useMutation(({ storage }, open) => {
     storage.get("status").update({ open: !open });
