@@ -41,6 +41,13 @@ export default function ModeratePage() {
           flexWrap: "wrap",
         }}
       >
+        <button
+          className="add-button"
+          onClick={() => setFilterSpeaker(undefined)}
+          style={{ whiteSpace: "nowrap" }}
+        >
+          All ({questions?.length})
+        </button>
         {[
           "Pratika Katiyar",
           "Debpriya Das",
