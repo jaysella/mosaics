@@ -9,9 +9,7 @@ const client = createClient({
   publicApiKey: process.env.LIVEBLOCKS_SECRET_KEY,
 });
 
-type Presence = {
-  isTyping: boolean;
-};
+type Presence = {};
 
 type Storage = {
   questions: LiveList<{ speaker: string; text: string; from: string }>;
@@ -21,8 +19,6 @@ type Storage = {
 export const {
   suspense: { RoomProvider },
   useOthers,
-  useUpdateMyPresence,
   useStorage,
   useMutation,
-  useBroadcastEvent,
 } = createRoomContext<Presence, Storage>(client);

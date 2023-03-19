@@ -19,9 +19,9 @@ export default function App({ Component, pageProps }: AppProps) {
 
       <RoomProvider
         id="mosaics"
-        initialPresence={{ isTyping: false }}
+        initialPresence={{}}
         initialStorage={{
-          questions: new LiveList(),
+          questions: new LiveList([]),
           status: new LiveObject({ open: false }),
         }}
       >
