@@ -24,7 +24,7 @@ export default function ModeratePage() {
       <Header title="Q&A Moderation" />
 
       <p>
-        {status ? "Accepting New Questions" : "NOT Accepting Questions"}{" "}
+        {status?.open ? "Accepting New Questions" : "NOT Accepting Questions"}{" "}
         <button
           className="add-button"
           onClick={() => toggleStatus(status?.open)}
