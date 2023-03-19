@@ -1,5 +1,4 @@
 import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import { RoomProvider } from "@/liveblocks.config";
 import "@/styles/globals.css";
 import "@/styles/SpeakerSelect.css";

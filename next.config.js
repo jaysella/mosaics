@@ -2,8 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   env: {
-    LIVEBLOCKS_SECRET_KEY:
-      "pk_dev_3QbQjHuFSDBeMsWLYkpGQsV_6fI-Gx9VeB_WZhzffmedD6iNdLzzww6-bWvqxaHQ",
+    LIVEBLOCKS_SECRET_KEY: process.env.LIVEBLOCKS_SECRET_KEY,
   },
 };
 
