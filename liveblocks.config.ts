@@ -2,7 +2,7 @@ import { createClient, LiveList, LiveObject } from "@liveblocks/client";
 import { createRoomContext } from "@liveblocks/react";
 
 if (!process.env.LIVEBLOCKS_SECRET_KEY) {
-  throw new Error(`No LIVEBLOCKS_SECRET_KEY.}`);
+  throw new Error("No LIVEBLOCKS_SECRET_KEY.");
 }
 
 const client = createClient({

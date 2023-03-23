@@ -16,16 +16,16 @@ export default function QuestionsList({
   return (
     <div className="questions-container">
       {questions && questions.length > 0 ? (
-        questions.map((todo, index) => {
+        questions.map((q, index) => {
           return (
             <div key={index} className="question-container">
               <div className="question">
                 <p className="speaker">
-                  For <b>{todo.speaker}</b>
+                  For <b>{q.speaker}</b>
                 </p>
-                <small>From {todo.from}</small>
+                <small>From {q.from}</small>
 
-                <p className="question-text">{todo.text}</p>
+                <p className="question-text">{q.text}</p>
               </div>
 
               {moderate ? (
